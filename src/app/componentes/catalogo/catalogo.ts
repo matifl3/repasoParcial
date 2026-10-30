@@ -14,16 +14,8 @@ import { catchError, of } from 'rxjs';
 export class Catalogo {
   private readonly service = inject(DispositivoService)
   protected readonly ruta = inject(Router)
-  protected readonly error = signal<string | null>(null)
   private readonly allDipos = toSignal(
-    this.service.getAll().pipe(
-      catchError((error: unknown) => {
-        this.error.set(error instanceof Error ? error.message : 'No se pudo cargar el catálogo.')
-        return of([] as Dispositivo[])
-      })
-    ),
-    {initialValue: [] as Dispositivo[]}
-  )
+
 
   protected readonly orden = signal('')
   protected readonly filtroCategoria = signal('')
