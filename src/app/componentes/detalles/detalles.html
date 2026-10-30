@@ -1,0 +1,22 @@
+@let p = producto()
+
+<button class= "volver" type="button" (click)="router.navigate(['/catalogo'])">Volver al Catalogo</button>
+
+@if(p){
+    <div class="carac">
+        <p>{{p.categoria}}</p>
+        <h1>{{p.name}}</h1>
+        <p>{{p.price}}</p>
+    </div>
+    
+    <div>
+        <button type="button" [class.activa]="panel()==='notes'" (click)="panel.set('notes')">descripcion </button>
+        <button type="button" [class.activa]="panel()==='notes'" (click)="panel.set('cup-profile')">descripcion </button>
+        @if(panel()==='notes'){
+            <h3>{{p.notes}}</h3>
+        }@else{
+            <p>{{p.cup-profile}}</p>
+        }
+        
+    </div>
+}

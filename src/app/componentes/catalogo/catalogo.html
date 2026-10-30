@@ -1,0 +1,25 @@
+<h1>catalogo</h1>
+<p>explorar</p>
+
+<div class="panel">
+    <div class="filter">
+        <label for="category">categoria</label>
+        <select #catSelect[value]="filtroCategoria()"
+        (change)="filtroCategoria().set(catSelect.value)"></select>
+        <option>todas la categorias</option>
+        @for(c of categories: $index){
+            <option value="c">{{c}}</option>
+        }
+    </div>
+    
+    <div class="filter">
+        <label for="ordena">ordanmiento</label>
+        <select #ordenamineto [value]="orden()"
+        (change)="orden.set(ordanmiento.value)"></select>
+        <option >sin ordenamiento</option>
+        <option value="asc">menor a mayor</option>
+        <option value="desc">mayor a menor</option>
+    </div>
+
+    <button (click)="limpiarForm()">limpiarForm</button>
+</div>

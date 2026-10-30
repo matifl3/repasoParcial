@@ -1,0 +1,44 @@
+{
+  "dispositivo": [
+    {
+      "id": 1,
+      "name": "Linea Mini",
+      "category": "cafe",
+      "price": 1850000,
+      "notes": "Extrae el café mediante alta presión en poco tiempo, utilizando café finamente molido.",
+      "cupProfile": "Bebida concentrada, de cuerpo intenso y textura densa, con crema característica y sabores pronunciados."
+    },
+    {
+      "id": 2,
+      "name": "Dedica Style",
+      "category": "cafe",
+      "price": 420000,
+      "notes": "Máquina compacta que utiliza presión para preparar espresso a partir de café finamente molido.",
+      "cupProfile": "Café concentrado y de cuerpo marcado, con aromas intensos. La crema y el equilibrio dependen del café y de la extracción."
+    },
+    {
+      "id": 3,
+      "name": "V60 Ceramic 02",
+      "category": "late",
+      "price": 58000,
+      "notes": "Dripper cónico de filtrado manual que permite controlar el vertido y el flujo del agua durante la extracción.",
+      "cupProfile": "Taza limpia y definida, con aromas claros y acidez perceptible. Puede resaltar notas frutales y florales según el café."
+    },
+    {
+      "id": 4,
+      "name": "V60 Plastic 02",
+      "category": "moka",
+      "price": 22000,
+      "notes": "Dripper cónico liviano que utiliza filtrado manual y permite ajustar la extracción mediante el vertido.",
+      "cupProfile": "Café limpio y aromático, con sabores diferenciados y una acidez que puede destacar según el origen y la receta."
+    },
+    {
+      "id": 5,
+      "name": "Classic 6 Cup",
+      "category": "late",
+      "price": 125000,
+      "notes": "Cafetera de filtrado manual que utiliza filtros de papel gruesos capaces de retener gran parte de los aceites y sedimentos.",
+      "cupProfile": "Taza especialmente limpia, de cuerpo ligero y textura delicada, con sabores definidos y poco sedimento."
+    }
+  ]
+}

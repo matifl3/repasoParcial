@@ -1,0 +1,48 @@
+<div class="form">
+    <form [formRoot]="formulario">
+        <div class="name">
+            <label>name</label>
+            <input type="text" [formField]="formulario.name">
+            @if(formulario.name().invalid() && formulario.name().touched()){
+                <span class="error">campo requerido</span>
+            }
+        </div>
+
+        <div class="notes">
+            <label>notes</label>
+            <input type="text" [formField]="formulario.notes">
+            @if(formulario.notes().invalid() && formulario.notes().touched())
+            {
+                <span class="erro">campo requerido</span>
+            }
+        </div>
+
+        <div class="cup-profile">
+            <label>Perfil en la taza</label>
+            <input type="text" [formField]="formulario.cupProfile">
+            @if(formulario.cupProfile().invalid() && formulario.cupProfile().touched()) {
+                <span class="erro">campo requerido</span>
+            }
+        </div>
+
+        <div class="price">
+            <label>Precio</label>
+            <input type="number" [formField]="formulario.price">
+            @if(formulario.price().invalid() && formulario.price().touched())
+            {
+                <span class="erro">campo requerido</span>
+            }
+        </div>
+
+        <div class="categoria">
+            <label>categoria</label>
+            <select [formField]="formulario.category">
+                @for(c of category; track $index){
+                    <option [value]="c">{{ c }}</option>
+                }
+            </select>
+        </div>
+        
+        <button type="submit">Guardar</button>
+    </form>
+</div>
