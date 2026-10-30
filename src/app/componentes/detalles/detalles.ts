@@ -21,24 +21,16 @@ export class Detalles implements OnInit{
   protected readonly producto = signal<Dispositivo | null>(null)
   protected readonly editando = signal(false)
   protected readonly panel = signal<'notes' | 'cupProfile'>('notes')
-  protected readonly cargando = signal(true)
-  protected readonly error = signal<string | null>(null)
   
   async ngOnInit() {
-    if (!this.id) {
+    if (this.id) {
+      const p = await firsVaaluFrom(this.service.getById(this.id)
+      this.producto(p)
+    }
+      else{
       this.router.navigate(['/catalogo'])
-      return
     }
 
-    try {
-      const dispo = await firstValueFrom(this.service.getById(this.id))
-      this.producto.set(dispo)
-    } catch (error) {
-      this.error.set(error instanceof Error ? error.message : 'No se pudo cargar el detalle.')
-    } finally {
-      this.cargando.set(false)
-    }
-  }
 
   async eliminar() {
     if (!confirm('¿Desea borrar este producto?') || !this.id) return
